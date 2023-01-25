@@ -15,7 +15,7 @@ Teams.init({
   },
   teamName: {
     type: DataTypes.STRING,
-  }
+  },
 }, {
   sequelize: db,
   tableName: 'teams',

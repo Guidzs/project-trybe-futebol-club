@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcryptjs'
+import * as bcrypt from 'bcryptjs';
 
 export const createHash = (password: string): string => {
   const salt = bcrypt.genSaltSync(10);
@@ -6,6 +6,6 @@ export const createHash = (password: string): string => {
   return hash;
 };
 
-export const validateHash = (password: string, hash: string): boolean => {
-  return bcrypt.compareSync(password, hash);
-};
+export const validateHash = (password: string, hash: string): boolean => (
+  bcrypt.compareSync(password, hash)
+);
