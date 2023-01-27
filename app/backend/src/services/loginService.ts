@@ -1,7 +1,7 @@
 import Users from '../database/models/UsersModel';
 import { ILogin, IUserDb, IToken } from '../interfaces/userInterfaces';
 import { validateHash } from '../utils/bcript';
-import { createToken } from '../utils/jtw';
+import { createToken, vevifyToken } from '../utils/jtw';
 
 const loginAuth = async (login: ILogin): Promise<IToken | null> => {
   const { email } = login;
@@ -15,6 +15,7 @@ const loginAuth = async (login: ILogin): Promise<IToken | null> => {
   const token = createToken(payload);
   return { token };
 };
+
 
 export default {
   loginAuth,
