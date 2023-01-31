@@ -5,6 +5,12 @@ const getAll = async () => {
   return teams;
 };
 
+const getOne = async (id: number): Promise<Teams> => {
+  const team = await Teams.findByPk(id) as Teams;
+  return team;
+};
+
 export default {
   getAll,
+  getOne,
 };
