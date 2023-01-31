@@ -19,6 +19,26 @@ const getAll = async () => {
   return matches;
 };
 
+const getInProgress = async (inProgress: boolean) => {
+  const matches = await Matches.findAll({
+    where: { inProgress },
+    include: [
+      {
+        model: Teams,
+        as: 'homeTeam',
+        attributes: { exclude: ['id'] },
+      },
+      {
+        model: Teams,
+        as: 'awayTeam',
+        attributes: { exclude: ['id'] },
+      },
+    ],
+  });
+  return matches;
+};
+
 export default {
   getAll,
+  getInProgress,
 };
