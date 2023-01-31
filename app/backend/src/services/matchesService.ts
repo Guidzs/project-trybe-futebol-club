@@ -60,7 +60,7 @@ const updateInProgress = async (id: number) => {
 
 const updateGoals = async (id: number, Goals: IGoals) => {
   await Matches.update(Goals, { where: { id } });
-}
+};
 
 export default {
   getAll,
