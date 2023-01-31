@@ -37,8 +37,17 @@ const updateInProgress = async (req: Request, res: Response) => {
   return res.status(200).json({ message: 'Finished' });
 };
 
+const updateGoals = async (req: Request, res: Response) => {
+  const { body, params: { id } } = req;
+
+  await matchesService.updateGoals(Number(id), body);
+
+  return res.status(200).json({ message: 'Updated' });
+};
+
 export default {
   getAll,
   insertMatch,
   updateInProgress,
+  updateGoals,
 };

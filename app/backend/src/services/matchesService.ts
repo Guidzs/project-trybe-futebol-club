@@ -1,7 +1,7 @@
 import { Op } from 'sequelize';
 import Matches from '../database/models/MatchesModel';
 import Teams from '../database/models/TeamsModel';
-import { IMatches } from '../interfaces/Interfaces';
+import { IGoals, IMatches } from '../interfaces/Interfaces';
 
 const getAll = async () => {
   const matches = await Matches.findAll({
@@ -58,9 +58,14 @@ const updateInProgress = async (id: number) => {
   await Matches.update({ inProgress: false }, { where: { id } });
 };
 
+const updateGoals = async (id: number, Goals: IGoals) => {
+  await Matches.update(Goals, { where: { id } });
+}
+
 export default {
   getAll,
   getInProgress,
   insertMatch,
   updateInProgress,
+  updateGoals,
 };
