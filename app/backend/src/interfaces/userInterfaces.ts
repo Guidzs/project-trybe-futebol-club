@@ -10,6 +10,10 @@ export interface IPayload {
   email: string,
 }
 
+export interface ITokenReturn {
+  dataValues: IPayload,
+}
+
 export interface IUserDb {
   id: number,
   username: string,

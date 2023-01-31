@@ -17,7 +17,7 @@ const getRole = async (req: Request, res: Response) => {
   if (!authorization) {
     return res.status(400);
   }
-  const { role } = vevifyToken(authorization);
+  const { dataValues: { role } } = vevifyToken(authorization);
   return res.status(200).json({ role });
 };
 
