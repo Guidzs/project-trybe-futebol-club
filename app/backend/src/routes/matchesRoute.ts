@@ -8,4 +8,6 @@ router.post('/', tokenValidate, matchesController.insertMatch);
 
 router.get('/', matchesController.getAll);
 
+router.put('/:id/finish', matchesController.updateInProgress);
+
 export default router;

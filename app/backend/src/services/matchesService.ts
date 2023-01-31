@@ -54,8 +54,13 @@ const insertMatch = async (Match: IMatches) => {
   return newMatch;
 };
 
+const updateInProgress = async (id: number) => {
+  await Matches.update({ inProgress: false }, { where: { id } });
+};
+
 export default {
   getAll,
   getInProgress,
   insertMatch,
+  updateInProgress,
 };

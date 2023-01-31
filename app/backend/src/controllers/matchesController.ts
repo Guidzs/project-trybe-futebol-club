@@ -30,7 +30,15 @@ const insertMatch = async (req: Request, res: Response) => {
   return res.status(201).json(newMatch);
 };
 
+const updateInProgress = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  await matchesService.updateInProgress(Number(id));
+
+  return res.status(200).json({ message: 'Finished' });
+};
+
 export default {
   getAll,
   insertMatch,
+  updateInProgress,
 };
