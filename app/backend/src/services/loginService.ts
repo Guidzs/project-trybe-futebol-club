@@ -1,5 +1,5 @@
 import Users from '../database/models/UsersModel';
-import { ILogin, IUserDb, IToken } from '../interfaces/userInterfaces';
+import { ILogin, IUserDb, IToken } from '../interfaces/Interfaces';
 import { validateHash } from '../utils/bcript';
 import { createToken } from '../utils/jtw';
 

@@ -1,3 +1,4 @@
+// User Interfaces ==============================
 export interface ILogin {
   email: string,
   password: string,
@@ -10,10 +11,6 @@ export interface IPayload {
   email: string,
 }
 
-export interface ITokenReturn {
-  dataValues: IPayload,
-}
-
 export interface IUserDb {
   id: number,
   username: string,
@@ -22,6 +19,13 @@ export interface IUserDb {
   password: string,
 }
 
+// Token Interfaces ==============================
 export interface IToken {
   token: string,
 }
+
+export interface ITokenReturn {
+  dataValues: IPayload,
+}
+
+// Teams Interfaces ==============================

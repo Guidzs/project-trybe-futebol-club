@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import { IPayload, ITokenReturn } from '../interfaces/userInterfaces';
+import { IPayload, ITokenReturn } from '../interfaces/Interfaces';
 
 const SECRET = process.env.JWT_SECRET as string;
 const JWT_CONFIG = {
