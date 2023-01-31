@@ -1,5 +1,7 @@
+import { Op } from 'sequelize';
 import Matches from '../database/models/MatchesModel';
 import Teams from '../database/models/TeamsModel';
+import { IMatches } from '../interfaces/Interfaces';
 
 const getAll = async () => {
   const matches = await Matches.findAll({
@@ -38,7 +40,22 @@ const getInProgress = async (inProgress: boolean) => {
   return matches;
 };
 
+const insertMatch = async (Match: IMatches) => {
+  const { homeTeamId, awayTeamId } = Match;
+
+  const teams = await Teams.findAll({ where: {
+    [Op.or]: [{ id: homeTeamId }, { id: awayTeamId }],
+  } });
+  if (teams.length < 2) {
+    return null;
+  }
+
+  const newMatch = await Matches.create({ ...Match, inProgress: true });
+  return newMatch;
+};
+
 export default {
   getAll,
   getInProgress,
+  insertMatch,
 };

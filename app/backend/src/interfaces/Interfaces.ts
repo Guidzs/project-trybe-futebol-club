@@ -28,4 +28,10 @@ export interface ITokenReturn {
   dataValues: IPayload,
 }
 
-// Teams Interfaces ==============================
+// Matches Interfaces ==============================
+export interface IMatches {
+  homeTeamId: number;
+  homeTeamGoals: number;
+  awayTeamId: number;
+  awayTeamGoals: number;
+}
