@@ -9,4 +9,4 @@ const JWT_CONFIG = {
 
 export const createToken = (user: IPayload) => jwt.sign(user, SECRET, JWT_CONFIG);
 
-export const vevifyToken = (token: string) => jwt.verify(token, SECRET);
+export const vevifyToken = (token: string) => jwt.verify(token, SECRET) as IPayload;
