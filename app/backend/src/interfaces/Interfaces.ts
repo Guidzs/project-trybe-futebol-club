@@ -40,3 +40,24 @@ export interface IGoals {
   homeTeamGoals: number;
   awayTeamGoals: number;
 }
+
+// Leaderboards Interfaces ========================
+export interface ITeamsData {
+  id: number
+  teamName: string,
+  homeTeam: IMatches[],
+  awayTeam: IMatches[],
+}
+
+export interface IBoard {
+  name: string,
+  totalPoints: number,
+  totalGames: number,
+  totalVictories: number,
+  totalDraws: number,
+  totalLosses: number,
+  goalsFavor: number,
+  goalsOwn: number,
+  goalsBalance: number,
+  efficiency: number,
+}
